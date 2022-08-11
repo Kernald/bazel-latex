@@ -554,6 +554,16 @@ latex_package(
 )
 
 latex_package(
+    name = "ifplatform",
+    srcs = [
+        ":pdftexcmds",
+        ":tools",
+        "@texlive_texmf__texmf-dist__tex__latex__ifplatform",
+    ],
+    tests = ["ifplatform_test.tex"],
+)
+
+latex_package(
     name = "ifthen",
     tests = ["ifthen_test.tex"],
 )
@@ -809,6 +819,14 @@ latex_package(
 )
 
 latex_package(
+    name = "pdftexcmds",
+    srcs = [
+        "@texlive_texmf__texmf-dist__tex__generic__pdftexcmds",
+    ],
+    tests = ["pdftexcmds_test.tex"],
+)
+
+latex_package(
     name = "pgfcore",
     srcs = [":pgf"],
     tests = ["pgfcore_test.tex"],
@@ -914,6 +932,19 @@ latex_package(
     name = "substr",
     srcs = ["@texlive_texmf__texmf-dist__tex__latex__substr"],
     tests = ["substr_test.tex"],
+)
+
+latex_package(
+    name = "svg",
+    srcs = [
+        ":ifplatform",
+        ":ifxetex",
+        ":koma_script",
+        ":tools",
+        ":trimspaces",
+        "@texlive_texmf__texmf-dist__tex__latex__svg",
+    ],
+    tests = ["svg_test.tex"],
 )
 
 latex_package(
