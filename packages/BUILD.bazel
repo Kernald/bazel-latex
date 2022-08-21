@@ -71,6 +71,12 @@ latex_package(
 )
 
 latex_package(
+    name = "atbegshi",
+    srcs = ["@texlive_texmf__texmf-dist__tex__generic__atbegshi"],
+    tests = ["atbegshi_test.tex"],
+)
+
+latex_package(
     name = "auxhook",
     srcs = [":graphics_oberdiek"],
     tests = ["auxhook_test.tex"],
@@ -312,6 +318,12 @@ latex_package(
     name = "epstopdf-base",
     srcs = [":graphics_oberdiek"],
     tests = ["epstopdf-base_test.tex"],
+)
+
+latex_package(
+    name = "eso_pic",
+    srcs = ["@texlive_texmf__texmf-dist__tex__latex__eso-pic"],
+    tests = ["eso_pic_test.tex"],
 )
 
 latex_package(
